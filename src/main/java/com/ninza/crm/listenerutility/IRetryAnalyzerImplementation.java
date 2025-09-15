@@ -1,0 +1,27 @@
+package com.ninza.crm.listenerutility;
+
+import org.testng.IRetryAnalyzer;
+import org.testng.ITestResult;
+
+public class IRetryAnalyzerImplementation implements IRetryAnalyzer
+{
+
+	//it is designed to run/triggered only when script is failed 
+	int count = 0; 
+	int limitCount = 5 ; 
+	
+	@Override
+	public boolean retry(ITestResult result) {
+		if(count<limitCount) 
+		{ 
+			count++; 
+			return true; 
+			
+		}
+		return false;
+	} 
+	
+
+	
+	
+}

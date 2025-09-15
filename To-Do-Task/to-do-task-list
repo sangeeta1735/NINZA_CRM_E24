@@ -1,0 +1,20 @@
+
+
+
+
+
+1. Add BaseClass with all the functionality and remove codes which is common in BaseClass like Launching Browser , 
+   Login to Ninza application , logout etc etc 
+   
+2. create suit file for group execution , batch execution , parallel execution , cross browser execution and 
+   Run multiple scripts (for e.g. : CreateCampaignTest { multiple Test Scripts with different test cases }  , 
+   CreateProductTest{ multiple Test Scripts with different test cases }   etc )   
+
+3. Test Scripts with use of Assertion file changes and Run/Execute 
+
+4. Listener class implementations 
+
+5. By using Random number create test scripts to run different test cases  
+
+6. Maven installation and run all the command to execute test scripts on command prompt by giving command line 
+
