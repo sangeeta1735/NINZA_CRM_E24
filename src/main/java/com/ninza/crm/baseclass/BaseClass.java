@@ -28,7 +28,7 @@ import org.testng.annotations.AfterSuite;
 
 public class BaseClass {
   
-	WebDriver driver; 
+	public WebDriver driver; 
 	public PropertyFileUtility pLib = new PropertyFileUtility();
 	public static WebDriver sdriver = null; 
 	
