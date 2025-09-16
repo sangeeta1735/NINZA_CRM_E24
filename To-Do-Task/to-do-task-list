@@ -18,3 +18,21 @@
 
 6. Maven installation and run all the command to execute test scripts on command prompt by giving command line 
 
+
+
+
+=============================== 
+
+
+questions to ask : 
+
+1. why with BaseClass extending not working and giving NullPointerException : Resolved 
+
+
+2. what actually thread-count in DistributedParallelExecution suit file ? Ans.: each thread count will be responsible for executing each <test> tag 
+in <suit> tag thread-count is must but in <test> tags thread-count="2" parallel="tests" are not mandatory but  name="Test1" is MUST 
+
+
+3. thread-count should be same as test-runner (no. of <Test> tags ) ?? Ans. : Yes 
+
+4. Edge Browser is not working in TestScript 

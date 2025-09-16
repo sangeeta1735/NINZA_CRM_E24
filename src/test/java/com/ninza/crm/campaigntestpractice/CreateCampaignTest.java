@@ -26,7 +26,7 @@ import com.ninza.crm.objectrepository.LoginPage;
 
 //@Listeners(com.ninza.crm.listenerutility.ListenerImplementation.class)
 public class CreateCampaignTest extends BaseClass {
-	WebDriver driver;
+	
 
 	@Test(groups = "Smoke")
 	public void createCampaignWithMandatoryFields() throws IOException, InterruptedException {
@@ -39,7 +39,7 @@ public class CreateCampaignTest extends BaseClass {
 		String compaignName = elib.getDataFromExcelSheet("campaign", 1, 1);
 		String targetSize = elib.getDataFromExcelSheet("campaign", 1, 2);
 
-		WebDriver driver = null;
+		//WebDriver driver = null;
 		// Handling pop up in Chrome Browser
 
 		// Launching the browser
@@ -47,14 +47,25 @@ public class CreateCampaignTest extends BaseClass {
 		// Login to Ninza application 
 		
 		// Create Compaign
+		/*
+		 * CreateCampaignPage ccp = new CreateCampaignPage(driver);
+		 * ccp.createCampaign(compaignName, targetSize); Thread.sleep(6000);
+		 */
+		HomePage hp = new HomePage(driver);
+		//hp.getCampaignLink().click();
+		CampaignPage cp = new CampaignPage(driver); 
+		cp.getCreateCampaign().click(); 
+		
 		CreateCampaignPage ccp = new CreateCampaignPage(driver);
-		ccp.createCampaign(compaignName, targetSize);
-		Thread.sleep(6000);
+		ccp.getCampName().sendKeys(compaignName);
+		ccp.getTargSize().sendKeys(targetSize);
+		
+		ccp.getCreateCampaignButton().click();
 
 		// Filling the date fetched from Excel sheet by using POM class
 
 		// Capturing toastMsg
-		HomePage hp = new HomePage(driver);
+		//HomePage hp = new HomePage(driver);
 
 		WebElement element = hp.getToastMsg();
 
